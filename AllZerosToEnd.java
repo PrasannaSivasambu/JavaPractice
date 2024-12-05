@@ -8,7 +8,7 @@ public class AllZerosToEnd {
         if(arr[left]==0){
             int temp=arr[right];
             arr[right]=arr[left];
-            arr[left]=temp;
+            arr[left]=temp; //true
         }
         if(arr[left]!=0){
             left++;
