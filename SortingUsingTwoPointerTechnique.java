@@ -37,5 +37,8 @@ public class SortingUsingTwoPointerTechnique {
     public static void main(String[] args) {
         int a[]={2,4,5,6,7},b[]={3,5,8,9,10};
         int[] c= sorting(a,b);
+        int[] original = {1, 2, 3, 4};
+        int[] deepCopy = Arrays.copyOf(original, original.length+5);
+        System.out.println(Arrays.toString(deepCopy)+" "+(original==deepCopy));
     }
 }
