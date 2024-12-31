@@ -61,5 +61,5 @@ public class review {
 //  Select e.department_name from employee e join department d on e.department_id=d.department_id
 //  union
 //  select AVG(s.salary) from salaries s left join employee e on e.employeeid= s.employeeid 
-13:55:37	SELECT d.department_name,avg(s.salary) as Averagesalary from Departments d join Employees e on d.department_id=e.department_id join Salaries s on e.employee_id=s.employee_id    -- group by d.department_id order by Averagesalary desc  where s.pay_date  between '2024-01-22' and '2024-02-03' LIMIT 0, 1000
-	Error Code: 1140. In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'company_db.d.department_name'; this is incompatible with sql_mode=only_full_group_by	0.000 sec
+// 13:55:37	SELECT d.department_name,avg(s.salary) as Averagesalary from Departments d join Employees e on d.department_id=e.department_id join Salaries s on e.employee_id=s.employee_id    -- group by d.department_id order by Averagesalary desc  where s.pay_date  between '2024-01-22' and '2024-02-03' LIMIT 0, 1000
+// 	Error Code: 1140. In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'company_db.d.department_name'; this is incompatible with sql_mode=only_full_group_by	0.000 sec
