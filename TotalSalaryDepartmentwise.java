@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -25,6 +26,7 @@ class Employee {
 public class TotalSalaryDepartmentwise {
 
     public static void main(String[] args) {
+        Employee em=new Employee("Alice", "H", 5000);
         
      List<Employee> employees = Arrays.asList(
             new Employee("Alice", "HR", 50000),
@@ -56,6 +58,10 @@ public class TotalSalaryDepartmentwise {
         Stream.concat(employees1.stream(),Stream.concat(employees2.stream(), employees.stream())).map(e->e.name).forEach(System.out::println);
 
         System.out.println(e1.equals(e2));
+        System.out.println("jiol "+employees.contains(em));
+
+        int hash = Objects.hash("key");
+        System.out.println(hash);
     }
 
         
