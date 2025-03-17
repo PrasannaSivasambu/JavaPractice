@@ -33,7 +33,10 @@ public class StudentProblem {
         System.out.println( e.chars().mapToObj(Character::toString).collect(Collectors.toMap(key->key, value->1,(v1,v2)->v1+v2,LinkedHashMap::new)));
         System.out.println(e.chars().mapToObj(Character::toString).sorted((w1,w2)->w2.compareTo(w1)).collect(Collectors.toList()));
         
-        Class<?> c=Class.forName("StudentProblem");
-        System.out.println(c);
+        // Class<?> c=Class.forName("StudentProblem");
+        // System.out.println(c);
+
+        int ge=10;
+       
     }
 }

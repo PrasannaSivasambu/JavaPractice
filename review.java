@@ -10,6 +10,7 @@
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
@@ -34,7 +35,21 @@ public class review {
 
        String arr= Arrays.stream(sarray).limit(k).collect(Collectors.joining(" "));
        System.out.println(arr);
-    }
+
+       List<String> sentences = Arrays.asList("Hello World", "Java Streams");
+
+       // Split each sentence into words and flatten them
+       List<String> words = sentences.stream()
+                                     .flatMap(sentence -> Arrays.stream(sentence.split(" ")))
+                                     .collect(Collectors.toList());
+
+        int arrr[] = {1, 34, 3, 9, 98, 76, 45, 4};
+        System.out.println("yukkimaru "+ Arrays.stream(arrr).boxed().map(u->Integer.toString(u)).sorted((a1, a2) -> {
+            int compareFirstChar = Character.valueOf(a2.charAt(0)).compareTo(a1.charAt(0));
+            return compareFirstChar != 0 ? compareFirstChar : a1.compareTo(a2); // Secondary comparison
+        })
+        .collect(Collectors.joining("")));
+}
     
 }
 // Employees: Contains information about employees. 

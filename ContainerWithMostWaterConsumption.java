@@ -1,7 +1,7 @@
 public class ContainerWithMostWaterConsumption {
 
     public static void main(String[] args) {
-        int height[] = {1,8,6,2,5,4,8,3,7},left=0,right=height.length-1,maxVolume=0,volume=0;
+        int height[] = {4,2,0,3,2,5},left=0,right=height.length-1,maxVolume=0,volume=0;
 
         while(left<right){
             if(height[left]<height[right]){
