@@ -1,4 +1,6 @@
+import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Permutations {
@@ -9,6 +11,8 @@ public class Permutations {
     }
 
     private static void backtrack(List<List<Integer>> result, List<Integer> tempList, int[] nums) {
+        System.out.println( "Result "+result+" TemplList "+tempList+" nums "+Arrays.toString(nums));
+        System.out.println();
         if (tempList.size() == nums.length) {
             result.add(new ArrayList<>(tempList)); // Add current permutation
         } else {
