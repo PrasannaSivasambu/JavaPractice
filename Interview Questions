@@ -1,0 +1,604 @@
+1.	DS & Algo Problems
+
+NOTE: Please make sure if using java 8 streams in the coder pad editor, the package needs to be imported manually.
+
+•	Longest Word:
+Given a string of letters and a dictionary, the function longest word should 
+ find the longest word or words in the a dictionary that can be made from the letters 
+ Input: letters = "oet", dictionary = {"to","toe","toes"} 
+ Output: {"toe"} 
+ Only lowercase letters will occur in the dictionary and the letters 
+ The length of letters will be between 1 and 10 characters 
+                 The solution should work well for a dictionary of over 100,000 words 
+
+
+•	 Decimal Conversion
+Implement the method provided numerator and denominator will return a string representing fraction's decimal form. Some fractions in decimal form have cyclic decimal points. 
+
+Implement the method that provided numerator and denominator will return a string representing fraction's decimal form.
+                Some fractions in decimal form have cyclic decimal points.
+public static String vulgarToDecimal(Long numerator, Long denominator) {
+}
+
+
+
+1. Longest word:
+
+Problem Statement-
+Given a string of letters and a dictionary, the function longestWord should
+find the longest word or words in the dictionary that can be made from the letters
+Input: letters = "oet", dictionary = {"to","toe","toes"}
+Output: {"toe"}
+Only lowercase letters will occur in the dictionary and the letters
+The length of letters will be between 1 and 10 characters
+                 The solution should work well for a dictionary of over 100,000 words
+
+Signature- Set<String> longestWord(String letters, Dictionary dictionary) {
+                    }
+
+Test Cases- 
+Dictionary dict = new Dictionary(new String[]{"to", "toe", "toes", "doe", "dog", "god", "dogs", "book", "banana"});
+   Input- toe
+
+
+
+2. Search Tree
+Problem Statement:
+Implement the “put" and “contains” methods.
+                Fix the "“inOrderTraversal” method.
+                 
+                  public class Problem {
+    static class BST {
+        private Node root;
+
+        public BST() {
+            this.root = new Node();
+        }
+
+        public void put(int value) {
+            // TODO: implement me
+        }
+
+        public boolean contains(int value) {
+            // TODO: implement me
+            return false;
+        }
+
+        public List<Integer> inOrderTraversal() {
+            final ArrayList<Integer> acc = new ArrayList<>();
+            inOrderTraversal(root, acc);
+            return acc;
+        }
+
+        private void inOrderTraversal(Node node, List<Integer> acc) {
+            if (node == null) {
+                return;
+            }
+            inOrderTraversal(node.left, acc);
+            inOrderTraversal(node.right, acc);
+            acc.add(node.val);
+        }
+
+        private static class Node {
+            Integer val;
+            Node left;
+            Node right;
+        }
+    }
+
+    public static void testBST() {
+        final BST searchTree = new BST();
+        searchTree.put(3);
+        searchTree.put(1);
+        searchTree.put(2);
+        searchTree.put(5);
+        assertFalse(searchTree.contains(0));
+        assertTrue(searchTree.contains(1));
+        assertTrue(searchTree.contains(5));
+        assertFalse(searchTree.contains(6));
+        assertEquals(Arrays.asList(1, 2, 3, 5), searchTree.inOrderTraversal());
+    }
+
+    private static void assertFalse(boolean rez) {
+        if (rez) {
+            throw new RuntimeException("Test failed");
+        } else {
+            System.out.println("Test passed");
+        }
+    }
+
+    private static void assertTrue(boolean rez) {
+        if (!rez) {
+            throw new RuntimeException("Test failed");
+        } else {
+            System.out.println("Test passed");
+        }
+    }
+
+    private static void assertEquals(List<Integer> expected, List<Integer> result) {
+        if (!expected.equals(result)) {
+            System.out.println(String.format("Test failed \"%s\" not equeals to \"%s\"", expected, result));
+        } else {
+            System.out.println("Test passed");
+        }
+    }
+
+    // TODO: write some more tests
+    public static void main(String[] args) {
+        testBST();
+    }
+}
+
+
+
+
+/**
+  * char findFirst(String input)
+  * Finds the first character that does not repeat anywhere in the input string
+  * If all characters are repeated, return 0
+  * Given "apple", the answer is "a"
+  * Given "racecars", the answer is "e"
+  * Given "ababdc", the answer is "d"
+  **/
+
+
+
+1. Merge and sort array of linkedlists
+2. Fraction to decimal conversion with recursing decimals
+
+
+Round 1- I Noticed a change in pattern(More Focus on Java and Springboot than DSA)
+First question - 
+Length of longest substring without repeating characters
+String s = "abcabcd" --> 4, 3, 6 ()
+Maxlength,startPosition , EndPosition
+
+Only explain the algo don't write the code.
+
+String s1 = "abc";
+String s2 = "abc";
+String s3 = new String("abc");
+s1 == s2 --> true
+s1 == s3 --> false
+s1.equals(s3) --> true
+s1.equals(s2) --> true
+
+What is Object Class;
+Difference between Set clear vs Set reinitialize memory-wise and Time complexity wise
+Design question - Make a Small app using Rest API in Spring boot including COntroller , Bussiness Class,CrudRepository , Pojo ,Apicalls , Test Cases using Junit , Validation of Data in Spring boot (How will you do it ?)
+class Person {
+}*/
+
+
+
+1. Find First Non repeated Char in a String
+Ex- "aapple" -> ans 'l'
+Follow up question : Find 3rd Non repeated char in String
+Ex- "aappletty" -> y
+2. Find Optimal Path in Grid , where you can move only Up and right , Start from last row and first column and reach first row and last col and 
+matrix[m-1][0] -> matrix[0][n-1] and collect coins for maximum sum.
+3. SnowPack - Given an array of non-negative integers representing the elevations
+from the vertical cross section of a range of hills, determine how many units of snow could be captured between the hills
+i/p - {0, 1, 3, 0, 1, 2, 0, 4, 2, 0, 3, 0} 
+o/p - 13
+
+
+
+1)	Search Tree - Implement the “put" and “contains” methods and Fix the "“inOrderTraversal” method.
+2)	Longest Word - Given a string of letters and a dictionary, the function longestWord should find the longest word or words in the dictionary that can be made from the letters.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2.	Technical Questions (2nd Round)
+
+
+Two questions on code snippets : asked what is wrong with the code and how to fix, what will be the output of those snippets ?
+Questions related to my experience and my previous work.
+Question on joins, self-join, inner join right joins, when and why we use inner join.
+Question on restful services, get mapping and post mapping.
+Question on deep copy and how to do that. 
+In what scenarios we use get and post ?
+In what scenarios I use post mapping to get the data ?
+How rest is different from other types of api’s ?
+Questions on how rest is statelessness, and scenario-based question on that.
+
+Q1. Reverse Strinf without effecting special characters.
+Q2. Find if a linked list is circular or not.
+Q3. Class level design (LLD) for Marathon.
+
+Interviewer: Hrishikesh
+All the questions were asked from resume. 
+1. Rest principles
+2. Spring boot vs Spring
+3. Views / stored procedures / indexes
+4. Why Rest is better than Soap?
+5. In order to optimise the query fetching millions record what will be your approach. 
+
+
+
+Question 1.
+input: "/gH?yZx"
+output: "/xZ?yHg"
+Question 2.
+Class level design (LLD) for Marathon
+26.2 miles race, multiple runner there
+at 10 miles make leaderboard of the top 10 runners
+Question 3.
+reverse String
+Question 4.
+check a string if palindrome or not
+Questions 5.
+REST API, Dependency injection, IOC, REST is synchronous or asynchronous? If thousands of request coming to REST controller for same api, how will handle?
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Basic. 
+1.	  tell me about yourself. and explain your skills.
+2.	 explain about project in depth.
+3.	 explain me any flow in your project.
+•	Your contribution in project like in which area you work. 
+•	Roles and responsibilities in last project.
+•	Challenges you faced during development or in production or in task and how you resolved it.
+4.	 As you Mentioned in your resume you are part of Design the architecture of the project. what are the challenges and what is the solution/change you decided.
+ 
+ 
+Java
+5.	What's all new in java 8;
+6.	HashMap internal working what are the changes In java 8(treefy). 
+https://medium.com/@yashodhara.chowkar/internal-working-of-hashmap-in-java-and-performance-improvement-in-java-8-a28ee1660cda#:~:text=In%20Java%208%2C%20when%20the,bucket%20are%20converted%20into%20TreeNode.
+ 
+7.	Internal working of Link List and array List 1. add 2.remove 3.search 
+8.	Stream methods and functional interface related to that, like filter uses Predicate, their parameters and return types
+9.	why default methods in interface.
+10.	why multiple inheritance not possible with class.
+11.	what will happen if two interface have same default methods and implements both on the class.
+12.	Exception handling in threads
+13.	Linked list structure
+14.	how to test private methods
+15.	can you give names of some methods in Object class
+16.	 can you write hash code and equals method within a class Employee which have fields(name, id, phone, etc)
+17.	 write a functional interface and use as a lambda expression for addition of two numbers
+18.	questions on SOLID design patterns : given scenarios and asked to fix and which principle is violating.
+19.	tell Me difference between  1.ConcurrentHashMap 2.SynchronizedMap 3.HashTable.
+20.	What is Object Class;
+21.	Difference between Set clear vs Set reinitialize memory-wise and Time complexity wise
+22.	Question on deep copy and how to do that. 
+ 
+ 
+ 
+ 
+ 
+Kafka 
+23.	Difference between kafka and rabbit. how dead letter queue is handled in both of MQ.
+24.	What are delivery guarantees in kafka.
+25.	What is rebalancing in kafka. 
+ 
+Database 
+26.	Type of Statement 
+27.	Difference between truncate  and delete , what kind of statement they are (DQl,DTL,DML,) ? which one is faster 
+28.	What is Locking in Databases and Isolation Mechanisms [https://medium.com/inspiredbrilliance/what-are-database-locks-1aff9117c290 ]
+ 
+29.	indexing -> what is indexing And tell me the difference between clustered and non clustered index. [21. Database Indexing: How DBMS Indexing done to improve search query performance? Explained]
+ 
+ 
+30.	normalization ->
+31.	ACID ->  what are the acid properties. 
+32.	Tell me the difference between Rank(), DenseRank(), RowNum() 
+33.	SQL vs NoSQL [10. SQL vs NoSQL | Difference between SQL & NoSQL | SQL Vs NoSQL Tutorial | SQL, NoSQL system design]
+ 
+ 
+34.	Difference between UNION and UNION ALL
+35.	Difference Between count(*) ,count(0),count(-1),count(col),count('youtube') | SQL Interview question [Difference Between count(*) ,count(0),count(-1),count(col),count('youtube') | SQL Interview question]
+ 
+ 
+ 
+Problem Solving [SQL]
+36.	find maxm salary of each department using streams
+Emp - id, name, sal, deptId [https://www.geeksforgeeks.org/sql-query-to-find-the-highest-salary-of-each-department/]
+37.	Most Asked SQL JOIN based Interview Question | # of Records after 4 types of JOINs
+ 
+ 
+ 
+38.	write a query you have table with id, date, value and get me the value based on id with maximum date.
+39.	There is employee table with empId,name,managerId where manager is also an employee. now find managerId having maximum number of employee under him
+40.	Problem Statement:
+You are given an Employee table with the following columns:
+•	empId: The unique ID of an employee.
+•	name: The name of the employee.
+•	managerId: The ID of the manager who supervises the employee. A manager is also an employee in the same table.
+Task:
+Write the Query that includes all the columns from the Employee table (empId, name, managerId) and an additional column named managerName. The managerName column should contain the name of the manager for each employee. If an employee does not have a manager (e.g., a top-level manager) or is themselves a manager, the managerName column should be empty (NULL).
+ 
+ 
+Problem Solving [Java & Data structure ]
+ 
+41.	find maximum salary of each department using streams
+Emp - id, name, sal, deptId [https://stackoverflow.com/questions/36040945/java-8-lambda-for-selecting-top-salary-employee-for-each-department]
+ 
+42.	 linked list algorithms and internal working(coding for all the below questions)
+•	 internal node structure
+•	  traversing
+•	 sorting,find mid in the linked list
+•	reverse linked list
+43.	print decreasing odd length star pattern in each rows (e.x : 7* 5* 3* 1*)
+44.	valid parenthesis problem solving question ex. input : "(()){}[]" output: true [https://leetcode.com/problems/valid-parentheses/description/]
+45.	find the duplicates from array and print.(multiple ways) (time and space complexity).
+46.	Find first non-repeating character in a string. [https://leetcode.com/problems/first-unique-character-in-a-string/description/] 
+Follow up question : Find 3rd Non repeated char in String
+Ex- "aappletty" -> y
+47.	Find Minimum in Rotated Sorted Array. [https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/description/] 
+48.	Given a string and pattern s = "bat bat boll bat" matches the pattern t = "zzyz", return whether the String matches the given pattern or not
+49.	You have provide and number n, write a program to get minimum steps required to minimizes this number to 1,
+You can perform either of the three Operations on the given number in each step:
+i) Subtract one from number
+ii) Divide the number by 2
+iii) Divide the number by 3
+50.	Given two words returns the shortest distance between their two midpoints in number of characters
+Words can appear multiple times in any order and should be case insensitive.
+ 
+https://github.com/rajkumardubey/MyInterviewChecklist/blob/master/src/self/learning/interview/coding/DistanceBetweenTwoWords.java
+https://leetcode.com/discuss/interview-question/2136329/goldman-sacks-technical-round 
+51.	Problem Statement :
+Takes String str and returns a new String
+such that the characters are in reversed order.
+Example: reverseStr(str) where str is “abcd " returns “dcba".
+ Signature: public static String reverseStr( String str ){
+                    }
+ Test Cases:
+ Input : abcd
+Output: dcba
+52.	Longest Word:
+Given a string of letters and a dictionary, the function longest word should 
+ find the longest word or words in the a dictionary that can be made from the letters 
+ Input: letters = "oet", dictionary = {"to","toe","toes"} 
+ Output: {"toe"} 
+ Only lowercase letters will occur in the dictionary and the letters 
+ The length of letters will be between 1 and 10 characters 
+                 The solution should work well for a dictionary of over 100,000 words 
+53.	 Merge and sort array of linkedlists
+54.	Fraction to decimal conversion with recursing decimals
+55.	Find Optimal Path in Grid , where you can move only Up and right , Start from last row and first column and reach first row and last col and matrix[m-1][0] -> matrix[0][n-1] and collect coins for maximum sum.
+56.	SnowPack - Given an array of non-negative integers representing the elevations from the vertical cross section of a range of hills, determine how many units of snow could be captured between the hills
+i/p - {0, 1, 3, 0, 1, 2, 0, 4, 2, 0, 3, 0} 
+o/p - 13
+57.	reverse String
+58.	check a string if palindrome or not
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Introduce your self.
+Explain one of your projects end to end.
+Why to use Kafka ?
+Synch and Asynch Annotations ?
+What is a Race Condition ? How to avoid this ? 
+What is Lazy Initialize Exception.
+Multiple implementaions of same type. How does Spring understand this? Expecting qualifier/primary
+What is Dispatcher Servlet in Spring MVC ?
+ What Design Patterns you used in your projects ?
+tell the uses case for any of the DPs you used.
+Builder
+How JDBC is different from JDBC ?
+ApplicationContext : How it works ? Explain more about it? 
+ have you used save() method in hiberante? save  vs persist vs saveOrUpdate methods.
+Lazy Loading ?
+ What is N + 1 problem ? Why it is a problem? How to resolve this ?
+ Explain @onetoMany/ManyToOne Annotations ?
+ Flush  vs commit in hibernate ?
+@transactional annotation? Why do we need it ? Will it work at class or method level? what is difference by delcaring @ class vs Method Level.
+Elaborate more on  ACID properties.
+There is RDB and running in distributed  ENV. How do u maintain the consistency across all the copies.
+Master/Slave replication ->? this is what expected for the above question.
+why do we need replication ? what purpose it serves ? What are the common ways/algorithms to implement this? What is the Leader/follower model ?
+How do we avoid race conditions in such cases.? Can we use any locks ?
+OOPS concepts 
+How do u ensure polymorphism 
+How do we handle abstractions ? Can u explain with some examples.
+What is the use of abstraction ? Can u explain with one example ?
+ Design Question: Design Tiny URL
+Redis cache 
+Session Storage
+Question on optimistic vs pessimistic locking
+How you maintain backward compatibility with REST ( version management) ?
+Did u use Asynch Annotation ?
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Did you work on hibernate ?
+Radis 
+Do u have any idea what is prompt engineering ?
+Interviewer is looking for LLM + prompt Engineering + Java skills. He doesn't mind even U have no experience. But says candidates need to know,
+Technical Discussion starts now:
+Lazy initializing Exception occurs in the logs. What does it mean? How do you solve this ? - what happens in background
+What is happening internally ?
+SQL/DB Experience : Imagine there are 3 nodes. Each application has  a copy of DB  and the data needs to be consistent ? What is the mechanisum or the term used for synchronizing the data (replication is the word). 
+Java:
+List of Objects -> Filter takes what? map() takes what type argument?  -
+Design patterns -> Asked about builder 
+Do u use  lombok -> 
+Circuit Breaker ->
+How Spring framework gets a new object whenever u call applicationcontext.getBean(). it is about scopes.
+in Spring MVC -> DispatcherServlet -> Expecting him to say the FrontController. how the request is dispatched to the respective Controller 
+Coding Question : How many letters 'a' r there in a sentence ?
+System Design : Monolithic to modular ( independent) . External systems need to use. What would be the approach to make it modular, 
+Each service has its own DB. and how A, B services communication between two services ? Expecting Sync, Asynch communications.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Check if two strings are anagrams.
+it should ignore special characters, upper case/lowercase, spaces.
+we need to write program in https://app.coderpad.io/ and execute it.
+explain the time complexity and space complexity.
+How do you calculate space complexity normally?
+ 
+JVM and Main Components
+Garbage Collector . Specifying the VM arguments.
+Different Garbage Collectors.
+Memory Leaks.
+elaborate on improper implementation of hashcode and equals methods.
+How do u check "What objects are occupÿing more memory" ?
+What is strong and soft references ?
+Purpose of Phantom references ..?
+Explain Thread pools
+Explain different parameters for creating ThreadPool.
+Completable Future and its benefits -> 
+How to make your class Thread-Safe ? 
+synchronized vs re-entrant lock ? which one is better?
+What version of java you used ? What are the virtual threads ?
+Spring Framework.. Main Components ?
+cyclic dependency ?
+ 
+How cacheable annotation works in spring? 
+Before calling method it needs to check in cache if the entry is available, if yes do not call the method. 
+if entry is not available in cache, call the method annotated with Cacheable and update the response in Cache.
+where such code is written.
+
+ 
+Spring supports two types of proxies, what are they?
+Lets say you have two methods in a class annotated with @Cacheable Annotation.
+if we call one method from another method within the same method, does Cacheable annoation works?
+Spring transactional - isolations levels?
+
+1. Expereience on the Code Reviews ?
+2. Master branch, feature branch   ?
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Spring Boot Components
+Spring AOP and how it works?
+Spring Bean Scopes
+Transactional Annotation and propagation Levels and isolation levels.
+optimistic locking and pessimistic locking 
+DBs and SQL: didn't ask any queries to write. But asked about that databases he worked on. 
+ 
+Questions from the director:
+Agile/scrum
+Check-in/Check-out  pull requests, Code reviews
+How a pull request actually works once a jira ticket is assigned to you? Expecting to answer on create a branch/pulll the code/make the changes/merge and push to the master branch.
+Experience working with QA Teams.
+Can u work with UK times and join the stand -up call ?.
+What if u stuck at your work/Issue ?
+
+code: list of integers, maximum frequency integer, if more than one number maximum frequency, return smallest of them
+follow up: explain the code and time complexity
+ 
+JVM and its components
+Memory Leaks how to resolve
+scenario: u don't have heap dumps, but u see heap usage is continuously growing, how to resolve this
+latest java version
+latest java version features 
+multi threading - executor service thread pools thread pool configuration
+deadlock scenario and how to mitigate deadlock
+Different map implementations u know, what is tree map
+Hash Code collision and how to avoid this
+Spring Boot and its components
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ Find the first non repeating character with Time and Space Complexities.
+ What is the latest java version ?
+Explain some of the latest java features.
+Experience on Virtual Threads.
+JVM and its main components
+Heap Memory usages ?
+ What are the class loaders ?
+Explain about the garbage collector and fine tune the Garbage Collection.
+Strong/Weak Reference ..?
+Thread Dumps/ Heap Dumps, Memory Leaks.
+Hash Code Collision ?  Can talk about equals and hashcode contract, treefi and untreefi with thresholds.
+Array List vs Linked List 
+Multi threading. How multiple threads Shar the data.
+Cyclic dependency
+Spring Framework (SB) and Its components.
+Cyclic Dependency ( from your past experience) ?
+If service is marked as final, will @Lazy annotation work here ?
+Bean Scopes ? 
+@Transactional Annotation + propagations
+Transaction Isolation Levels
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ind most frequent integer from list of integers, if there are more than 1 with same frequency, find the smallest integer among them.
+ 
+1. Collection framework: list, map, set
+2. synchronized collections
+3. completable future
+4. types of threadpools
+5. spring IOC, cyclic dependency, different types of injections
+6. what is transactional
+7. how to get memory dump
+8. garbage collection, types, how to set garbage collection in application
+9. what is stackoverflow issue, how to produce it
+10. how to check memory leak
+11. types of references
+12. volatile keyword
+13. cache implementation in spring
+14. in memory cache vs redis
+15. disadvantage of using hibernate
+16. time complexity of sorting algorithms
+17. memory leak, how to debug it
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+DSA Question :https://leetcode.com/problems/valid-anagram/description/
+Questions on HashMap, Hashcode and equal method
+Questions on Multi-threading -> volatile, thread-safe collection, executer-service
+Question on Database -> Pessimistic vs Optimistic locking
+Question on Spring -> IOC principle, Hibernate vs JDBC, transactional annotation, Cyclic Dependency
+Question on new JAVA versions
+Questions on JVM, Memory Management, Garbage Collection, Stong-Reference, Weak-Referance etc
+Questions on immutable class
+1. Reference Types
+2.JVM architecture
+3. GC
+4. Memory leaks and questions related to profiling and memory dumps.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Introduction
+Interest working with sound-hound.
+Role of DispatcherServlet
+When Lazy Initialization Exception occurs ? Explain more in details.
+Explain Optional, Future, CompletableFuture with usage.
+Key differences between MS and Monolithic application
+How you  handle Load Balancing in MS
+Key diff between Component, Service, Repository 
+ JPA  Relations.
+ Coding is: Find the no of occurrences of a letter 'a' in a given String. ( Expecting to create a frequency map and iterate that map)
+ Coding: Given a binary tree, find the maximum depth ( not able to answer)
+Question on CME, Checking the Method naming conventions.
+System Design Questions : 
+URL Shortener: 
+ Backward Compatibility/Versioning with Rest APIs.
+Misc Questions:
+Have you worked on any LLM in the past ?
+ ******************** Questions from 2nd panel ************
+ Monolithic vs MS vs Modular architecture : how do u de compose/ what you consider while decomposing a monolithic App to MS
+How to avoid tight coupling between MS ( components) 
+How would u move the Data (from the Existing DB) from monolithic to a new MS ( as per MS best practices, every MS should have its own DB/Schema).
+Delete vs truncate in SQL.
+What are Distributed Systems? 
+3 nodes in your cluster. Each node connects to one DB instance. How do you make sure the Data Consistency across the replicated nodes.
+Day to Day Responsibilities/Upskilling. What Udemy courses has u gone so far ?
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+

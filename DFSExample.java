@@ -42,3 +42,8 @@ public class DFSExample {
     }
     
 }
+        //      0
+        //     /  \
+        //    1    2
+        //   /
+        //  3

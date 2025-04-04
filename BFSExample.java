@@ -14,6 +14,7 @@ class BinaryTree {
         if (root == null) return;
         
         Queue<TreeNode> queue = new LinkedList<>();
+        Stack<TreeNode> stack= new Stack<>();
         queue.offer(root);
 
         while (!queue.isEmpty()) {
@@ -22,6 +23,13 @@ class BinaryTree {
 
             if (node.left != null) queue.offer(node.left);
             if (node.right != null) queue.offer(node.right);
+            stack.push(node);
+        }
+        System.out.println();
+        while (!stack.isEmpty()) {
+
+            System.out.print(stack.pop().val+" ");
+            
         }
     }
 
