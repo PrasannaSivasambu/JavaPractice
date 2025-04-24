@@ -1,5 +1,10 @@
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -45,6 +50,15 @@ public class java9 {
 
         int m=o.orElse(0);
         System.out.println(m);
+
+        List<Integer> numberss = Arrays.asList(1, 2, 3, 4, 5);
+			int sum = 0;
+			int j=numbers.stream().peek((i)-> System.out.println("h")).findFirst().get();
+            System.out.println(j+" niol");
+
+            Set<Integer> d= new HashSet<>();
+            Map<Integer,Integer> cm= new HashMap<>();
+
     }
     
 }

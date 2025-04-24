@@ -49,7 +49,8 @@ public class NewAnagram {
                                               : a1.getKey().compareTo(a2.getKey())  
     ).limit(1).findFirst().get().getKey());
     
-        
+
+    System.out.println( list.stream().collect(Collectors.groupingBy(e->Integer.toString(e),Collectors.maxBy((r1,r2)->r2.compareTo(1)))));
     
 
     }
