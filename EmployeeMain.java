@@ -1,24 +1,7 @@
 import java.util.*;
 import java.util.stream.Collectors;
 
-class Employee {
-    public long id;
-    public String name;
-    public Department dept;
 
-    public Employee(long id, String name, Department dept) {
-        this.id = id;
-        this.name = name;
-        this.dept = dept;
-    }
-
-    @Override
-    public String toString() {
-        // TODO Auto-generated method stub
-        return "id : " + id + " Name :" +name+ " Dept : "+ dept.deptName;
-    }
-   
-}
 
 class Department {
     public long deptId;

@@ -22,6 +22,17 @@ class Employee {
         System.out.println(super.getClass()==obj.getClass());
         return this.department==e.department;
     }
+
+    @Override
+    public int hashCode() {
+        // TODO Auto-generated method stub
+        return Objects.hash(this.department);
+    }
+    @Override
+    public String toString() {
+        // TODO Auto-generated method stub
+        return this.name+" "+this.department+" "+this.salary;
+    }
 }
 public class TotalSalaryDepartmentwise {
 
@@ -62,6 +73,12 @@ public class TotalSalaryDepartmentwise {
 
         int hash = Objects.hash("key");
         System.out.println(hash);
+
+
+
+
+
+        
     }
 
         
