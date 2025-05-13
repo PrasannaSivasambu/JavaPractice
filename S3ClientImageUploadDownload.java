@@ -147,9 +147,31 @@ public class ProductService {
     }
 
     public List<ProductResponse> getAllProducts() {
-        return productRepository.findAll().stream()
-                .map(p -> new ProductResponse(p.getId(), p.getName(), p.getImageUrls()))
-                .collect(Collectors.toList());
+        List<ProductResponse> productResponses = new ArrayList<>();
+
+        // Iterate through all products
+        for (Product product : productRepository.findAll()) {
+            List<byte[]> images = new ArrayList<>();
+
+            // For each image URL, download the corresponding image from S3
+            for (String imageUrl : product.getImageUrls()) {
+                String key = s3FileStorageService.extractKeyFromUrl(imageUrl);
+                byte[] imageBytes = s3FileStorageService.downloadImage(key);
+                images.add(imageBytes);
+            }
+
+            // Create a ProductResponse with the images as byte arrays
+            ProductResponse response = new ProductResponse(
+                product.getId(),
+                product.getName(),
+                product.getImageUrls(),
+                images
+            );
+
+            productResponses.add(response);
+        }
+
+        return productResponses;
     }
 }
 

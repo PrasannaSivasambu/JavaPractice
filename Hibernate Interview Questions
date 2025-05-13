@@ -1,0 +1,187 @@
+### Hibernate Interview Questions and Answers
+
+---
+
+#### Beginner-Level Questions
+
+1. **What is Hibernate?**
+
+   * Hibernate is an Object Relational Mapping (ORM) framework for Java that simplifies data persistence by mapping Java objects to database tables.
+
+2. **What are the advantages of using Hibernate over JDBC?**
+
+   * Reduces boilerplate code
+   * Database independence
+   * Caching for performance
+   * Automatic table creation
+   * Lazy loading and better object management
+
+3. **What is an ORM (Object Relational Mapping)?**
+
+   * ORM is a technique that maps Java classes to database tables, allowing developers to interact with the database using Java objects rather than SQL.
+
+4. **What are the key components of Hibernate architecture?**
+
+   * Configuration
+   * SessionFactory
+   * Session
+   * Transaction
+   * Query (HQL/SQL)
+
+5. **What is a Hibernate configuration file (`hibernate.cfg.xml`)?**
+
+   * It is an XML file that contains database connection settings and Hibernate properties.
+
+6. **What is a Session in Hibernate?**
+
+   * A Session is a single-threaded, short-lived object used to interact with the database and persist objects.
+
+7. **What is a SessionFactory?**
+
+   * A heavyweight, thread-safe object used to create Session instances. Usually created once and used across the application.
+
+8. **Explain the difference between `get()` and `load()` methods.**
+
+   * `get()`: Returns `null` if object not found; fetches data immediately.
+   * `load()`: Throws exception if not found; may return proxy and fetch data lazily.
+
+9. **What are Hibernate's primary annotations?**
+
+   * `@Entity`, `@Table`, `@Id`, `@Column`, `@OneToOne`, `@OneToMany`, `@ManyToOne`, `@ManyToMany`
+
+10. **What is the role of `hibernate.hbm2ddl.auto`?**
+
+    * Configures schema generation: `validate`, `update`, `create`, `create-drop`
+
+11. **Difference between transient, persistent, and detached states?**
+
+    * Transient: Object not associated with Hibernate session
+    * Persistent: Object associated with session and in database
+    * Detached: Object once associated, but session is closed
+
+12. **What are the different fetching strategies in Hibernate?**
+
+    * Lazy: Loads related data on-demand
+    * Eager: Loads related data immediately
+
+13. **What are the inheritance mapping strategies?**
+
+    * Single Table (`@Inheritance(strategy = InheritanceType.SINGLE_TABLE)`)
+    * Joined Table (`JOINED`)
+    * Table per Class (`TABLE_PER_CLASS`)
+
+14. **Difference between `@OneToOne`, `@OneToMany`, etc.?**
+
+    * Define relationships between entities:
+
+      * `@OneToOne`: One record to one
+      * `@OneToMany`: One record to many
+      * `@ManyToOne`: Many records to one
+      * `@ManyToMany`: Many records to many
+
+---
+
+#### Intermediate-Level Questions
+
+1. **What is the N+1 select problem?**
+
+   * When fetching a parent entity and lazily loading each child results in N+1 queries. Fix by using `JOIN FETCH` or batch fetching.
+
+2. **Lazy vs Eager Loading?**
+
+   * Lazy: Fetches data only when accessed
+   * Eager: Fetches all related data upfront
+
+3. **What are cascading types?**
+
+   * Define how operations like persist, merge, remove affect associated entities. E.g., `CascadeType.ALL`
+
+4. **Difference between `merge()` and `update()`?**
+
+   * `merge()`: Copies changes from detached object to persistent one
+   * `update()`: Reattaches a detached object
+
+5. **How does Hibernate handle transactions?**
+
+   * Via `Transaction` API. Begin, commit or rollback explicitly.
+
+6. **First-level vs Second-level cache?**
+
+   * First-level: Session scope, default
+   * Second-level: SessionFactory scope, optional, uses providers like EhCache
+
+7. **Difference between `save()`, `persist()`, and `saveOrUpdate()`?**
+
+   * `save()`: Returns generated ID, inserts new record
+   * `persist()`: Does not return ID, follows JPA
+   * `saveOrUpdate()`: Updates if object exists, else saves
+
+8. **Can we use a composite key?**
+
+   * Yes, using `@Embeddable` and `@EmbeddedId` or `@IdClass`
+
+9. **Optimistic vs Pessimistic locking?**
+
+   * Optimistic: Uses versioning
+   * Pessimistic: Locks record in DB
+
+10. **What is dirty checking?**
+
+* Hibernate automatically detects object changes and updates DB at flush/commit.
+
+11. **Named queries?**
+
+* Static HQL or SQL queries declared using `@NamedQuery` or XML.
+
+12. **How do you map an enum?**
+
+* Using `@Enumerated(EnumType.STRING)` or `EnumType.ORDINAL`
+
+---
+
+#### Advanced-Level Questions
+
+1. **How does Hibernate manage the persistence context?**
+
+   * Through the Session, tracking entity states and changes.
+
+2. **How does dirty checking work?**
+
+   * Compares in-memory snapshot with database snapshot and updates only changed fields.
+
+3. **How does the second-level cache work?**
+
+   * Caches entities across sessions using providers. Must be configured explicitly.
+
+4. **How does Hibernate handle concurrency?**
+
+   * Through isolation levels, optimistic/pessimistic locking.
+
+5. **Difference between EntityManager and Session?**
+
+   * `EntityManager`: JPA standard
+   * `Session`: Hibernate-specific
+
+6. **How to improve performance with large datasets?**
+
+   * Use pagination, batch processing, second-level cache, `StatelessSession`
+
+7. **Native SQL vs HQL?**
+
+   * HQL is object-oriented; native SQL is database-specific
+
+8. **Use of `@SQLInsert`, `@SQLUpdate`, `@SQLDelete`?**
+
+   * Custom SQL for insert/update/delete operations
+
+9. **Using stored procedures?**
+
+   * Yes, via `@NamedStoredProcedureQuery` or native queries
+
+10. **Hibernate DDL generation?**
+
+    * Based on `hibernate.hbm2ddl.auto` and entity annotations, Hibernate can auto-generate schema.
+
+---
+
+Let me know if you need real-world examples or a condensed cheat sheet.

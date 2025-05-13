@@ -602,13 +602,3 @@ Day to Day Responsibilities/Upskilling. What Udemy courses has u gone so far ?
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Write a program to fetch and aggregate employee information from two separate services:
-An Employee Profile Service that returns basic employee information (e.g., name).
-  A Employee Past Experience Service that returns the employee’s prior experience (e.g., years worked).
-  Calls both services asynchronously and in parallel.
-  Aggregates the results into a single response object.
-  Always wait for both service calls to complete before responding.
-How intercommunication works in case of microservices 
-What are different Http methods used in rest api and which are idempotent?
-How to handle crosscutting concerns?
- 
