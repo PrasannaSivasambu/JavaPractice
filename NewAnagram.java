@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class NewAnagram {
@@ -83,7 +84,23 @@ public class NewAnagram {
 
        System.out.println("kilo "+count['c']+" "+'c');
 
+    //    int x=2;
+Function<Integer,Integer> f=(x)->x*x;
+Predicate<Integer> p= (r)->r==2;
 
+p.test(2);
+
+int nc='A';
+
+System.out.println(nc);
+
+int[] counti = new int[26];
+        int left = 0;
+        int maxCount = 0;
+        int maxLength = 0;
+
+        count[s.charAt(right) - 'A']++;
+            maxCount = Math.max(maxCount, count[s.charAt(right) - 'A']);
     }
     
 }

@@ -18,6 +18,7 @@ public class Palindrome {
        String s="madam";
        System.out.println( s.chars().mapToObj(e->(char)e).collect(Collectors.toCollection(LinkedList::new)).reversed().stream().map(ek->Character.toString(ek)).collect(Collectors.joining()));
 
+       
     }
 }
 
