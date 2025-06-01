@@ -5,6 +5,7 @@ import java.time.Period;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.stream.Collectors;
 
 public class DateApi {
 
@@ -72,6 +73,9 @@ public class DateApi {
         System.out.println("Date: " + date);
         System.out.println("Time: " + time);
         System.out.println("DateTime: " + dateTime);
+
+        String s="abbc";
+        System.out.println( s.chars().mapToObj(Character::toString).collect(Collectors.joining("")) );
 
     }
     

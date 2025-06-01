@@ -26,5 +26,19 @@ public class StreamProblems {
 
        System.out.println(e);
        System.out.println(employees);
+
+       int count=9;
+       System.out.println(Arrays.toString( String.valueOf(count).toCharArray()));
+
+       int i=0;
+
+       while(i<5){
+        System.out.println(++i);
+        System.out.println(i);
+        System.out.println();
+       }
+
+       String h="lty";
+       System.out.println( Arrays.toString( h.toCharArray()) );
     }
 }

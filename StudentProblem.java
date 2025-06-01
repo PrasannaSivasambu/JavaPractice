@@ -15,6 +15,11 @@ class  Student {
         this.name=name;
         this.roll=roll;
     }
+    @Override
+    public String toString() {
+        // TODO Auto-generate'd method stub
+        return age+" "+grade+" "+name+" "+roll;
+    }
 }
 
 public class StudentProblem {
@@ -24,9 +29,10 @@ public class StudentProblem {
         Student s3=new Student(3, 13, "raju", 'C');
         Student s4=new Student(4, 14, "rajesh", 'C');
         Student s5=new Student(5, 15, "rahu", 'E');
-        Student s6=new Student(6, 16, "rahul", 'A');
+        Student s6=new Student(6, 16, "rahulo", 'A');
+        Student s7=new Student(7, 16, "rahul", 'A');
 
-        List<Student> s= new ArrayList<>(Arrays.asList(s1,s2,s3,s4,s5,s6));
+        List<Student> s= new ArrayList<>(Arrays.asList(s1,s2,s3,s4,s5,s6,s7));
         Double df= s.stream().map(se->se.age).mapToInt(Integer::valueOf).average().getAsDouble();
         System.out.println(df);
         String e="Java is a Programming Language";
@@ -37,6 +43,14 @@ public class StudentProblem {
         // System.out.println(c);
 
         int ge=10;
-       
+
+        System.out.println( s.stream().collect(Collectors.groupingBy(el->el.grade,Collectors.collectingAndThen(Collectors.toList(), l->l.stream()
+        .sorted(
+            (a,b)->Integer.compare(b.age, a.age)==0 
+            ?Integer.compare(a.name.length(), b.name.length())
+            :Integer.compare(b.age, a.age)
+            )
+        .toList()))) );
+       s1.name.length();
     }
 }
