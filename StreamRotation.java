@@ -15,5 +15,17 @@ public class StreamRotation {
             .collect(Collectors.toList());
 
         System.out.println(rotated); // [4, 5, 1, 2, 3]
+
+        String s="abcdef";
+        int leftshift=2,rightshift=2;
+        System.out.println("LeftShift "+  s.substring(leftshift,s.length())+s.substring(0,leftshift) );
+        System.out.println("RightShift "+  s.substring(s.length()-rightshift)+s.substring(0,s.length()-rightshift) );
+
+
+        Set<String> set=new HashSet<>();
+        set.add("qw");
+         System.out.println(set.contains("qw"));
+
+
     }
 }

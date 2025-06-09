@@ -1,6 +1,5 @@
-
-package org.example;
 import java.util.*;
+import java.util.concurrent.CompletableFuture;
 
 public class GetSubarray {
     public static List<List<Integer>> getValidSubarrays(List<Integer> arr) {
@@ -28,6 +27,10 @@ public class GetSubarray {
         for (List<Integer> sub : validSubarrays) {
             System.out.println(sub);
         }
+
+        CompletableFuture c = new CompletableFuture();
+
+        
     }
 
 

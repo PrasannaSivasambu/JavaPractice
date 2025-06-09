@@ -5,6 +5,8 @@ import java.time.Period;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class DateApi {
@@ -17,6 +19,7 @@ public class DateApi {
         LocalDate end = LocalDate.of(2025, 5, 13);
 
         Period period = Period.between(start, end);
+        
 
         System.out.println("Years: " + period.getYears());
         System.out.println("Months: " + period.getMonths());
@@ -77,6 +80,15 @@ public class DateApi {
         String s="abbc";
         System.out.println( s.chars().mapToObj(Character::toString).collect(Collectors.joining("")) );
 
+
+         String input = "The price is 45 and discount is 10";
+        Pattern pattern = Pattern.compile("\\d+");
+
+        Matcher matcher = pattern.matcher(input);
+
+        while (matcher.find()) {
+            System.out.println("Found number: " + matcher.group());
+        }
     }
     
 }
